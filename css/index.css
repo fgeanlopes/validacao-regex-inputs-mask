@@ -1,0 +1,4 @@
+*{font-size: clamp(16px, 5vw, 32px); margin: 0;padding: 0;color:#fff;background: #929292;}
+body{padding: 15px;}
+label{width: max-content; display: block;font-weight:500; font-family:sans-serif;}
+input{padding: 5px; border: 1px solid #b4b4b4; margin: 5px 0 15px; outline: none; border-radius: 5px;}

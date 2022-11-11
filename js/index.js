@@ -27,13 +27,23 @@ const mask = {
         .replace(/(\d{2})(\d{1})/, '($1) $2')
         .replace(/(\d{4})(\d{1})/, '$1-$2')
         .replace(/(\d{4})-(\d{1})(\d{4})/, '$1$2-$3')
-        .replace(/(-\d{4,})\d+?$/, '$1')
+        .replace(/(-\d{4})\d+?$/, '$1')
     },
     cep(value){
+        // CEP: 00000-000
         return value
+        .replace(/\D/g, '')
+        .replace(/(\d{5})(\d{1})/, '$1-$2')
+        .replace(/(-\d{3})\d+?$/, '$1')
     },
     pis(value){
+        // PIS: 000.00000.00-0
         return value
+        .replace(/\D/g, '')
+        .replace(/(\d{3})(\d{1})/, "$1.$2")
+        .replace(/(\d{5})(\d{1})/, "$1.$2")
+        .replace(/(\d{5}\.)(\d{2})(\d{1})/, "$1$2-$3")
+        .replace(/(-\d{1})\d+?$/, "$1")
     },
     
 }

@@ -45,6 +45,14 @@ const mask = {
         .replace(/(\d{5}\.)(\d{2})(\d{1})/, "$1$2-$3")
         .replace(/(-\d{1})\d+?$/, "$1")
     },
+     moeda(value){
+        // MOEDA: 000.00000.00-0
+        return value
+        .replace(/\D/g, '')
+        .replace(/(\d{1})(\d{1})/, '$1.$2')
+        .replace(/(\d{3})(\d{1})/, '$1,$2');
+        // .replace(/(,\d{2})\d+?$/, '$1');
+    },
     
 }
 
